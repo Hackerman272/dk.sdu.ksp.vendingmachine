@@ -29,10 +29,7 @@ public class SoftDrinksCompartment {
     public int countProducts(String productName) {
         int count = 0;
         for (SoftDrink softDrink : softDrinks) {
-            if (softDrink == null) {
-                continue;
-            }
-            if (softDrink.getName().equals(productName)) {
+            if (softDrink != null && softDrink.getName().equals(productName)) {
                 count++;
             }
         }
@@ -41,11 +38,12 @@ public class SoftDrinksCompartment {
 
     public String[] getProductsNames() {
         String[] names = new String[this.countProducts()];
+        int index = 0;
 
-        for (int i = 0; i < this.countProducts();) {
-            if (this.softDrinks != null) {
-                names[i] = this.softDrinks[i].getName();
-                i++;
+        for (SoftDrink softDrink : this.softDrinks) {
+            if (softDrink != null) {
+                names[index] = softDrink.getName();
+                index++;
             }
         }
 

@@ -1,6 +1,7 @@
 package compartments;
 
 import products.Snack;
+import products.SoftDrink;
 
 public class SnacksCompartment {
     public static final int defaultCapacity = 42;
@@ -29,10 +30,7 @@ public class SnacksCompartment {
     public int countProducts(String productName) {
         int count = 0;
         for (Snack snack : snacks) {
-            if (snack == null) {
-                continue;
-            }
-            if (snack.getName().equals(productName)) {
+            if (snack != null && snack.getName().equals(productName)) {
                 count++;
             }
         }
@@ -41,11 +39,12 @@ public class SnacksCompartment {
 
     public String[] getProductsNames() {
         String[] names = new String[this.countProducts()];
+        int index = 0;
 
-        for (int i = 0; i < this.countProducts();) {
-            if (this.snacks != null) {
-                names[i] = this.snacks[i].getName();
-                i++;
+        for (Snack snack : this.snacks) {
+            if (snack != null) {
+                names[index] = snack.getName();
+                index++;
             }
         }
 
@@ -54,11 +53,11 @@ public class SnacksCompartment {
 
     public void fillCompartment(String productName, int amount) {
         int productsAdded = 0;
-        for (Snack snack : snacks) {
-            if (snack == null) {
-                snack = new Snack(productName);
+        for (int i = 0; i < snacks.length; i++) {
+            if (snacks[i] == null) {
+                snacks[i] = new Snack(productName);
+                productsAdded++;
             }
-
             if (productsAdded == amount) {
                 break;
             }

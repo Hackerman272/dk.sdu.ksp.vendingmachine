@@ -28,6 +28,9 @@ public class VendingMachine {
     public void insertCash(double credit) {
         if (credit > 0) {
             cashCompartment.increaseBalance(credit);
+            System.out.println("Balance increased. New balance: " + cashCompartment.getBalance());
+        } else {
+            System.out.println("Invalid payment amount");
         }
     }
 
@@ -60,7 +63,7 @@ public class VendingMachine {
 
 
     public SoftDrink[] buySoftDrink(String productName, int amount) {
-        int numberOfAvailableProducts = snacksCompartment.countProducts(productName);
+        int numberOfAvailableProducts = softDrinksCompartment.countProducts(productName);
         if (numberOfAvailableProducts == 0) {
             System.out.println("No available products");
             return new SoftDrink[0];

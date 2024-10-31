@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CashCompartment {
     double balance;
-    ArrayList<Double> purchases;
+    ArrayList<Double> purchases = new ArrayList<Double>();
 
     public CashCompartment() {}
 
@@ -13,7 +13,7 @@ public class CashCompartment {
     }
 
     public void increaseBalance(double paymentAmount) {
-        if (paymentAmount >= 0) {
+        if (paymentAmount > 0) {
             balance += paymentAmount;
         } else {
             System.out.println("Invalid payment amount");
