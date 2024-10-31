@@ -99,16 +99,17 @@ public class VendingMachine {
     }
 
     public void printInstructions() {
-        System.out.println("""
+        System.out.println(
+                """
                 Vending Machine Menu:
                 1) Print stock
                 2) Insert cash
-                3) Cancel purchase
-                4) Purchase soft drink
-                5) Purchase snack
-                6) Restock soft drink
-                7) Restock snack
-                8) Print total balance""");
+                3) Purchase soft drink
+                4) Purchase snack
+                5) Restock soft drink
+                6) Restock snack
+                7) Print total balance
+                """);
     }
 
     public void printStocks() {
