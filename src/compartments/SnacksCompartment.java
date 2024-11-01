@@ -1,7 +1,6 @@
 package compartments;
 
 import products.Snack;
-import products.SoftDrink;
 
 public class SnacksCompartment {
     public static final int defaultCapacity = 42;

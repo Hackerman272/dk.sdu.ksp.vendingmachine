@@ -1,7 +1,6 @@
 import products.Snack;
 import products.SoftDrink;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
