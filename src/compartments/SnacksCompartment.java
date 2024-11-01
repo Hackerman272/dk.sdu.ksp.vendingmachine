@@ -93,7 +93,7 @@ public class SnacksCompartment {
         return disposingSnacks;
     }
 
-    public Snack disposeProducts(String productName) {
-        return this.disposeProducts(productName, 1)[0];
+    public Snack[] disposeProducts(String productName) {
+        return this.disposeProducts(productName, 1);
     }
 }

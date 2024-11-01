@@ -24,8 +24,12 @@ public class Main {
 
                 System.out.println("Please enter the cash: ");
                 String inputCash = scanner.nextLine();
-                double insertedCash = Double.parseDouble(inputCash);
-                vendingMachine.insertCash(insertedCash);
+                try {
+                    double insertedCash = Double.parseDouble(inputCash);
+                    vendingMachine.insertCash(insertedCash);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid cash inserted.");
+                }
                 break;
             case "3":
                 System.out.println("\n|Purchasing soft drink|\n");

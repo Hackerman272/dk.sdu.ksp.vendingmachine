@@ -92,7 +92,7 @@ public class SoftDrinksCompartment {
         return disposingSoftDrinks;
     }
 
-    public SoftDrink disposeProducts(String productName) {
-        return this.disposeProducts(productName, 1)[0];
+    public SoftDrink[] disposeProducts(String productName) {
+        return this.disposeProducts(productName, 1);
     }
 }

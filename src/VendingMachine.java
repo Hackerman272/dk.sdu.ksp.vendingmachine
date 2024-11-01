@@ -54,9 +54,10 @@ public class VendingMachine {
             System.out.println("Not enough cash inserted");
             return new Snack[0];
         } else {
-            System.out.println("Product " + productName + " has been dispensed\n " +
-                    "in the amount of " + numberToDispense + " items.\n" +
-                    "Change: " + cashCompartment.releaseBalance() + " DDK");
+            System.out.println("Product " + productName + " has been dispensed in the amount of " + numberToDispense +
+                    " items." +
+                    "\nTotal cost: " + totalCost + " DDK." +
+                    "\nChange returned: " + cashCompartment.releaseBalance() + " DDK.");
             return snacksCompartment.disposeProducts(productName, numberToDispense);
         }
     }
@@ -78,9 +79,10 @@ public class VendingMachine {
             System.out.println("Not enough cash inserted");
             return new SoftDrink[0];
         } else {
-            System.out.println("Product " + productName + " has been dispensed\n " +
-                    "in the amount of " + numberToDispense + " items.\n" +
-                    "Change: " + cashCompartment.releaseBalance() + " DDK");
+            System.out.println("Product " + productName + " has been dispensed in the amount of " + numberToDispense +
+                    " items." +
+                    "\nTotal cost: " + totalCost + " DDK." +
+                    "\nChange returned: " + cashCompartment.releaseBalance() + " DDK.");
             return softDrinksCompartment.disposeProducts(productName, numberToDispense);
         }
     }
